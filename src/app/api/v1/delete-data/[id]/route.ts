@@ -1,17 +1,19 @@
+import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+interface IDeleteParams {
+  params: {
+    id: string;
+  };
+}
 
-export const DELETE = async (request: Request, { params }: { params: { id: string } }) => {
+export const DELETE = async (req: Request, { params }: IDeleteParams) => {
   const { id } = params;
-  
-  try {
-    const deletedUser = await prisma.user.delete({
-      where: { id: Number(id) },
-    });
-    return NextResponse.json(deletedUser);
-  } catch (error) {
-    return NextResponse.json(error)
-  }
+
+  const data = await prisma.user.delete({
+    where: {
+      id: Number(id),
+    },
+  });
+  return NextResponse.json(data);
 };
