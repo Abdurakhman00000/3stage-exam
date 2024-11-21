@@ -9,14 +9,14 @@ export const PATCH = async (request: Request) => {
     const id = url.pathname.split("/").pop();
 
     if (!id) {
-      return NextResponse.json({ message: "ID is required" }, { status: 400 });
+      return NextResponse.json({ message: "ID" }, { status: 400 });
     }
 
     const data = await request.json();
 
     if (!data.firstName || !data.lastName) {
       return NextResponse.json(
-        { message: "First name and last name are required" },
+        { message: "400" },
         { status: 400 }
       );
     }
@@ -30,13 +30,13 @@ export const PATCH = async (request: Request) => {
     });
 
     return NextResponse.json(
-      { message: "User updated successfully", updatedUser },
+      { message: "Success", updatedUser },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error updating user:", error);
+    console.error("Error:", error);
     return NextResponse.json(
-      { error: "Failed to update user" },
+      { error: "Failed m" },
       { status: 500 }
     );
   }
