@@ -1,0 +1,53 @@
+.Main {
+    margin: 70px 0;
+    h1 {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 400;
+        font-family: Georgia, 'Times New Roman', Times, monospace;
+        margin-bottom: 20px;
+    }
+
+
+    .exit_button {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        button {
+            width: 130px;
+            height: 40px;
+            border: none;
+            border-radius: 15px;
+            background: blueviolet;
+            color: white;
+        }
+    }
+
+
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .main_data {
+
+            .data_list {
+                border: 2px solid blueviolet;
+                border-radius: 20px;
+                padding: 20px 40px;
+                display: flex;
+                align-items: center;
+                gap: 35px;
+
+                img {
+                    width: 250px;
+                    height: 150px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
